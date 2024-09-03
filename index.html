@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script src="scripts.js"></script>
+    <div class="main">
+        <div class="logo">
+            <img src="assets/Vector.png" alt="">
+            <h1>quicklist</h1>
+        </div>
+        <div class="title">
+            <a href="#">← Voltar</a>
+            <h2>Compras da semana</h2> 
+        </div>
+        <div class="inputNsubmit">
+            <input type="text" name="" id="adicione" placeholder="Adicione um novo item">
+            <button type="submit" id="Btn" onclick="subLi();">Adicionar item</button>
+        </div>
+        <div class="itemList" id="list">
+            <div class="item">
+                <input type="checkbox" id="checkbox"><span id="itemName">Pão de forma</span><img src="assets/Frame.svg" id="remove" onclick="remove()">
+            </div>
+        </div>
+        <div class="removed hidden" id="rmv">
+            <img src="assets/Icon.svg" alt=""><span>O item foi removido da lista</span><img src="assets/IconX.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+:root {
+    --background-primary: #F4F5FB;
+    --background-secondary: #FFF;
+
+    --color-brand-hover: #A52C6B;
+    --color-brand: #CA3884;
+    --color-danger: #C93847;
+
+    --content-primary: #080B12;
+    --content-secondary: #374151;
+    --content-tertiary: #9CA3AF;
+
+    --always-white: #FFF;
+
+    --border-primary: #D1D5DB;
+    --border-hover: #B9C2D0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", system-ui;
+}
+body {
+    background-color: var(--background-primary);
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 630px;
+    /* border: 1px solid red; */
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    & h1 {
+        color: var(--content-secondary);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    & img {
+        height: 31px;
+    }
+}
+.title {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    & a {
+        text-decoration: none;
+        color: var(--color-brand);
+        font-weight: 600;
+    } & h2{
+        font-size: 32px;
+    }
+}
+.inputNsubmit {
+    display: flex;
+    gap: 16px;
+}
+.inputNsubmit #adicione{
+    flex: 3;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border-primary);
+    margin: 40px 0;
+    font-size: 16px;
+}
+#adicione:hover {
+    border: 1px solid var(--border-hover);
+}
+#adicione:focus::placeholder {
+    color: var(--content-primary);
+}
+#adicione:focus {
+    outline:1px solid var(--color-brand);
+}
+.inputNsubmit button:hover{
+    background-color: var(--color-brand-hover);
+    transition: background-color .5s;
+}
+.inputNsubmit button{
+    flex: 1;
+    font-size: 16px;
+    padding: 11px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-brand);
+    font-weight: 600;
+    color: var(--always-white);
+    margin: 40px 0;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+.itemList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    & .item {
+        align-items: center;
+        background-color: var(--background-secondary);
+        display: flex;
+        padding: 10px;
+        border-radius: 10px;
+        gap: 12px;
+        & img {
+            cursor: pointer;
+        }
+        & input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border: 1px solid var(--border-primary);
+            border-radius: 7px;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid var(--border-hover);
+            }
+        }
+        & input[type="checkbox"]:checked {
+            background-color: var(--color-brand);
+            background-image: url(assets/checked.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 7px;
+            border: none;
+        }
+        & :nth-child(2) {
+            margin-right: auto;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--content-secondary);
+        }
+    }
+}
+.removed {
+    background-color: var(--color-danger);
+    padding: 12px;
+    border-radius: 10px;
+    color: var(--always-white);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 36px;
+    & span {
+        margin-right: auto;
+    }
+    & img{
+        cursor: pointer;
+    }
+}
+.hidden {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+@media (max-width: 550px) {
+    .main {
+        margin: 32px;
+    }
+    .logo {
+        display: none;
+    }
+    .inputNsubmit {
+        flex-direction: column;
+        & #adicione {
+            flex: 1;
+            margin: 0;
+        }
+        & button {
+            flex: 1;
+            margin: 0;
+        }
+    }
+    .itemList {
+        margin-top: 40px;
+    }
+    .title h2 {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+    .title {
+        margin: 0;
+    }
+    #rmv {
+        font-size: 14px;
+    }
+}
